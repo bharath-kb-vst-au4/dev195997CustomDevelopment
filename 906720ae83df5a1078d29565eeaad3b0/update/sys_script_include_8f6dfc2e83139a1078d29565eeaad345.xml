@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>global.ParentUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>ParentUtils</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var ParentUtils = Class.create();
+ParentUtils.FIELDTYPE = {};
+ParentUtils.FIELDTYPE.JOURNAL_INPUT = 'journal_input';
+ParentUtils.prototype = {
+    initialize: function(_parent) {
+        this.parent = _parent;
+        this.delayLogStack = [];
+        this.funcStack = [this.type];
+        // this.logger = new global.GSLog('x_shghs_og.log.level.parent', 'OneGate: Core');
+        try {
+            // call any initialize functions in sub classes, passing any additional parameters
+            this._initialize([].slice.call(arguments, 1));
+        } catch (doNothing) {}
+    },
+    /**
+     * @param {string} inputString - Any string
+     * @returns {string} - Reverse of the inputstring 
+     */
+    reverseString: function(inputString) {
+        var loc = inputString.split('');
+        var arrRes = [];
+
+        for (var i = loc.length - 1; i >= 0; i--) {
+            arrRes.push(loc[i]);
+        }
+
+        var reverse = arrRes.join('');
+
+        return reverse;
+
+    },
+
+    type: 'ParentUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-27 12:56:21</sys_created_on>
+        <sys_id>8f6dfc2e83139a1078d29565eeaad345</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>ParentUtils</sys_name>
+        <sys_package display_value="Global development" source="906720ae83df5a1078d29565eeaad3b0">906720ae83df5a1078d29565eeaad3b0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Global development">906720ae83df5a1078d29565eeaad3b0</sys_scope>
+        <sys_update_name>sys_script_include_8f6dfc2e83139a1078d29565eeaad345</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-27 14:08:10</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>8f6dfc2e83139a1078d29565eeaad345</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-27 12:56:20</sys_created_on>
+        <sys_id>c37d702e83139a1078d29565eeaad367</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-27 12:56:20</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_action_param_map">
+    <sys_sg_action_param_map action="INSERT_OR_UPDATE">
+        <button display_value="New Button (Incident)">92e7642283139a1078d29565eeaad35d</button>
+        <item_parameter display_value="Incident assignment_group">5ee7642283139a1078d29565eeaad35a</item_parameter>
+        <sys_class_name>sys_sg_action_param_map</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-27 11:22:05</sys_created_on>
+        <sys_id>5ee7642283139a1078d29565eeaad361</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>5ee7642283139a1078d29565eeaad35a</sys_name>
+        <sys_package display_value="Global development" source="906720ae83df5a1078d29565eeaad3b0">906720ae83df5a1078d29565eeaad3b0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Global development">906720ae83df5a1078d29565eeaad3b0</sys_scope>
+        <sys_update_name>sys_sg_action_param_map_5ee7642283139a1078d29565eeaad361</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-27 11:22:05</sys_updated_on>
+        <ui_parameter display_value="Assignment group">1ae7642283139a1078d29565eeaad35f</ui_parameter>
+    </sys_sg_action_param_map>
+</record_update>
