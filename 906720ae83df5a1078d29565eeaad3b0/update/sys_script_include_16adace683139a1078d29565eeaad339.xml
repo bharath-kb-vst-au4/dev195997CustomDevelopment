@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>global.GDIncidentUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>GDIncidentUtils</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var GDIncidentUtils = Class.create();
+GDIncidentUtils.prototype = {
+    initialize: function() {},
+    TABLE_NAME: 'incident',
+
+    /**
+     * getUserIncidents
+     * @param {String} user - The sys_id of the user
+     * @returns {Array} Array of objects containing incident data
+     */
+
+    getUserIncidents: function(user) {
+        if (!user) {
+            throw "No user sys_id provided";
+        }
+
+        var incidents = [];
+        var incidentGr = new GlideRecord(this.TABLE_NAME);
+        incidentGr.addQuery('assigned_to', user);
+        incidentGr.query();
+        var incidentCount = incidentGr.getRowCount();
+        if (incidentCount < 1) throw ("There are no incidents assigned to the user")
+        while (incidentGr.next()) {
+            incidents.push(incidentGr.sys_id.toString());
+        }
+        return incidents;
+    },
+
+    type: 'GDIncidentUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-27 11:47:24</sys_created_on>
+        <sys_id>16adace683139a1078d29565eeaad339</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>GDIncidentUtils</sys_name>
+        <sys_package display_value="Global development" source="906720ae83df5a1078d29565eeaad3b0">906720ae83df5a1078d29565eeaad3b0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Global development">906720ae83df5a1078d29565eeaad3b0</sys_scope>
+        <sys_update_name>sys_script_include_16adace683139a1078d29565eeaad339</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-27 12:55:52</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>16adace683139a1078d29565eeaad339</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-27 11:47:24</sys_created_on>
+        <sys_id>91bd24ae83df5a1078d29565eeaad31a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-27 11:47:24</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
